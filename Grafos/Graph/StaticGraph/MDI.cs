@@ -12,10 +12,10 @@ namespace Grafos.Graph
         }
         public override void AddEdge(int Vertex01, int Vertex02, int Aresta)
         {
-            conectAresta(Vertex01, Aresta);
-            conectAresta(Vertex02, Aresta);
+            ConectAresta(Vertex01, Aresta);
+            ConectAresta(Vertex02, Aresta);
         }
-        public void conectAresta(int vertice,int aresta)
+        public void ConectAresta(int vertice,int aresta) 
         {
             Adj[vertice, aresta] = 1;
         }
@@ -37,6 +37,10 @@ namespace Grafos.Graph
         public override int GetWeight(int Vertex01, int Vertex02)
         {
             int aux = 0;
+            if (ExistEdge(Vertex01, Vertex02)==false)
+            {
+                return aux;
+            }
             for (int i = 0; i < Adj[Vertex01, i]; i++)
             {
                 if (Adj[Vertex01, i] == 1)
