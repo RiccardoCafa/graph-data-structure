@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Grafos.Graph.StaticGraph;
+using Grafos.Graph;
 
 namespace Grafos
 {
