@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grafos.Graph.StaticGraph
+namespace Grafos.Graph
 {
     [System.Serializable]
     class GraphS : StaticGraph
@@ -10,7 +10,7 @@ namespace Grafos.Graph.StaticGraph
         
         public GraphS(int M) : base(M) { }
         
-        public override void AddEdge(int Vertex01, int Vertex02, int Weight)
+        public override void AddEdge(int Vertex01, int Vertex02, int Weight = 1 )
         {
             Adj[Vertex01, Vertex02] += Weight;
             Adj[Vertex02, Vertex01] += Weight;

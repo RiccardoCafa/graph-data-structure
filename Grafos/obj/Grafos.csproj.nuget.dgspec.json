@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\Grafos.csproj": {}
+    "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\Grafos.csproj": {
+    "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\Grafos.csproj",
+        "projectUniqueName": "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj",
         "projectName": "Grafos",
-        "projectPath": "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\Grafos.csproj",
-        "packagesPath": "C:\\Users\\ricca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\obj\\",
+        "projectPath": "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj",
+        "packagesPath": "C:\\Users\\falca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ricca\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\falca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"

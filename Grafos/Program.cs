@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Grafos.Graph.StaticGraph;
+using Grafos.Graph;
 
 namespace Grafos
 {
@@ -78,7 +78,7 @@ namespace Grafos
                     if(GraphType == 1)
                     {
                         graphS = new GraphS(tam);
-                    } else if(GraphType == 2)
+                    } else if(GraphType =   = 2)
                     {
                         graphS = new DigraphS(tam);
                     }

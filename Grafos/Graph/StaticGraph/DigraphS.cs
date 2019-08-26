@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grafos.Graph.StaticGraph
+namespace Grafos.Graph
 {
     [System.Serializable]
     class DigraphS : StaticGraph
