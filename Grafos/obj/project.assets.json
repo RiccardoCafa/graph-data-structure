@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\Grafos.csproj",
+      "projectUniqueName": "C:\\Users\\ricca\\Documents\\Projects\\GrafoStructure\\Grafos\\Grafos.csproj",
       "projectName": "Grafos",
-      "projectPath": "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\Grafos.csproj",
+      "projectPath": "C:\\Users\\ricca\\Documents\\Projects\\GrafoStructure\\Grafos\\Grafos.csproj",
       "packagesPath": "C:\\Users\\ricca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricca\\source\\repos\\Grafos\\Grafos\\obj\\",
+      "outputPath": "C:\\Users\\ricca\\Documents\\Projects\\GrafoStructure\\Grafos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

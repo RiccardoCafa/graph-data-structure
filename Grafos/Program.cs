@@ -14,11 +14,13 @@ namespace Grafos
         {
             Console.WriteLine("Bem vindo ao Graph Console.\n");
 
-            Console.WriteLine("Seleciona o tipo de grafo.\n\n 1 - Grafo\n 2 - Digrafo");
+            Console.WriteLine("Seleciona o tipo de grafo.\n\n 1 - Grafo\n 2 - Digrafo\n 3 - MDI");
 
             string ent = "";
 
-            while (GraphType != 1 || GraphType != 2)
+            bool correto = false;
+
+            while (!correto)
             {
                 ent = Console.ReadLine();
                 switch (ent[0])
@@ -26,14 +28,19 @@ namespace Grafos
                     case '1':
                         GraphType = 1;
                         Console.WriteLine("Tipo Grafo selecionado");
+                        correto = true;
                         break;
                     case '2':
                         GraphType = 2;
                         Console.WriteLine("Tipo Digrafo selecionado");
+                        correto = true;
+                        break;
+                    case '3':
+                        GraphType = 3;                        
+                        Console.WriteLine("MDI selecionado");
                         break;
                     default: WrongEntry(); break;
                 }
-                if (GraphType != 1 || GraphType != 2) break;
             }
 
             string SE;
@@ -54,8 +61,15 @@ namespace Grafos
 
         public static void GraphTextEntry()
         {
-            Console.WriteLine("\n\n1 X - Criar um " + (GraphType == 1 ? "Grafo" : "Digrafo") 
+            switch(GraphType)
+            {
+                case 1:
+                case 2:
+                    Console.WriteLine("\n\n1 X - Criar um " + (GraphType == 1 ? "Grafo" : "Digrafo")
                                                     + " (sendo X o tamanho da matriz)\n");
+                    break;
+            }
+            
             Console.WriteLine("2 - V1 V2 W - Criar uma aresta\n");
             Console.WriteLine("3 - V1 V2 Existe uma aresta\n");
             Console.WriteLine("4 - Tamanho do grafo em bytes (cuidado ao usar com grafos de ordem muito alta)");
