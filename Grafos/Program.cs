@@ -78,12 +78,9 @@ namespace Grafos
                     if(GraphType == 1)
                     {
                         graphS = new GraphS(tam);
-                    } else if(GraphType == 2)
+                    } else if(GraphType =   = 2)
                     {
                         graphS = new DigraphS(tam);
-                    }else if(GraphType == 3)
-                    {
-                        graphS = new MDI(v, a);
                     }
 
                     Console.WriteLine("Grafo criado. Tamanho: " + tam);
