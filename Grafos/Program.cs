@@ -33,6 +33,8 @@ namespace Grafos
             graph.AddArc(verts[4], verts[3], 9);
             graph.AddArc(verts[5], verts[3], 5);
 
+            Console.WriteLine("Dijkstra:");
+
             Dictionary<Vertex<int>, int> dists;
 
             graph.Dijkstra(verts[0], out dists);
@@ -45,6 +47,13 @@ namespace Grafos
             {
                 Console.WriteLine(pair.Key.Value + " : " + pair.Value);
             }
+
+            Console.WriteLine("BFS: ");
+
+            List<Vertex<int>> list = graph.BFS(verts[0]);
+
+            list.Sort();
+            foreach(Vertex<int> )
 
             Console.Read();
         }

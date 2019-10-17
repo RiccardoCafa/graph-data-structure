@@ -47,20 +47,50 @@ namespace Grafos.Graph.GenericGraph
             }
         }
 
-        protected void DepthFirstSearch(Vertex<T> root)
+        private List<Vertex<T>> visitados;
+        private Dictionary<Vertex<T>, int> visitadosCam;
+
+        public void DepthFirstSearch(Vertex<T> root, out List<Vertex<T>> visits)
         {
             UnvisitGraph();
-            DFS(root);
+            visitados = new List<Vertex<T>>();
+            DFSwCam(root);
+            visits = visitados;
         }
 
-        protected void DFS(Vertex<T> root)
+        public void DepthFirstSearch(Vertex<T> root, out Dictionary<Vertex<T>, int> visits)
+        {
+            UnvisitGraph();
+            cam = 0;
+            visitados = new List<Vertex<T>>();
+            DFSwCam(root);
+            visits = visitadosCam;
+        }
+
+        protected void DFSwCam(Vertex<T> root)
         {
             if(!root.IsOpen)
             {
+                visitados.Add(root);
                 root.IsOpen = true;
                 foreach(Vertex<T> v in root.adj.Keys)
                 {
-                    DFS(v);
+                    DFSwCam(v);
+                }
+            }
+        }
+
+        private int cam = 0;
+        protected void DFSCam(Vertex<T> root)
+        {
+            if (!root.IsOpen)
+            {
+                visitadosCam.Add(root, cam);
+                root.IsOpen = true;
+                cam++;
+                foreach (Vertex<T> v in root.adj.Keys)
+                {
+                    DFSCam(v);
                 }
             }
         }
