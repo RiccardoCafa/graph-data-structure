@@ -20,3 +20,14 @@ C:\Users\falca\Documents\GitHub\GrafoStructure\Grafos\bin\Debug\netcoreapp2.1\Gr
 C:\Users\falca\Documents\GitHub\GrafoStructure\Grafos\bin\Debug\netcoreapp2.1\Grafos.pdb
 C:\Users\falca\Documents\GitHub\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.dll
 C:\Users\falca\Documents\GitHub\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.pdb
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\bin\Debug\netcoreapp2.1\Grafos.deps.json
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\bin\Debug\netcoreapp2.1\Grafos.runtimeconfig.json
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\bin\Debug\netcoreapp2.1\Grafos.runtimeconfig.dev.json
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\bin\Debug\netcoreapp2.1\Grafos.dll
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\bin\Debug\netcoreapp2.1\Grafos.pdb
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.csprojAssemblyReference.cache
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.csproj.CoreCompileInputs.cache
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.AssemblyInfoInputs.cache
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.AssemblyInfo.cs
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.dll
+C:\Users\ricca\Documents\Projects\GrafoStructure\Grafos\obj\Debug\netcoreapp2.1\Grafos.pdb

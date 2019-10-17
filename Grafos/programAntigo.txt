@@ -1,49 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using Grafos.Graph.GenericGraph;
+using System.Runtime.Serialization.Formatters.Binary;
+using Grafos.Graph;
 
 namespace Grafos
 {
     class Program
     {
-        public static Graph<int> graph;
+
+        public static StaticGraph graphS = null;
+        public static int GraphType = -1;
         static void Main(string[] args)
         {
-            Vertex<int>[] verts = new Vertex<int>[6]
+            Console.WriteLine("Bem vindo ao Graph Console.\n");
+
+            Console.WriteLine("Seleciona o tipo de grafo.\n\n 1 - Grafo\n 2 - Digrafo");
+
+            string ent = "";
+
+            while (GraphType != 1 || GraphType != 2)
             {
-                new Vertex<int>(1),
-                new Vertex<int>(2),
-                new Vertex<int>(3),
-                new Vertex<int>(4),
-                new Vertex<int>(5),
-                new Vertex<int>(6),
-            };
+                ent = Console.ReadLine();
+                switch (ent[0])
+                {
+                    case '1':
+                        GraphType = 1;
+                        Console.WriteLine("Tipo Grafo selecionado");
+                        break;
+                    case '2':
+                        GraphType = 2;
+                        Console.WriteLine("Tipo Digrafo selecionado");
+                        break;
+                    default: WrongEntry(); break;
+                }
+                if (GraphType != 1 || GraphType != 2) break;
+            }
 
-            graph = new Graph<int>(false);
+            string SE;
 
-            graph.AddArc(verts[0], verts[1], 7);
-            graph.AddArc(verts[0], verts[2], 8);
-            graph.AddArc(verts[1], verts[0], 3);
-            graph.AddArc(verts[1], verts[4], 4);
-            graph.AddArc(verts[1], verts[5], 8);
-            graph.AddArc(verts[2], verts[4], 10);
-            graph.AddArc(verts[3], verts[2], 1);
-            graph.AddArc(verts[4], verts[3], 9);
-            graph.AddArc(verts[5], verts[3], 5);
+            GraphTextEntry();
 
-            Dictionary<Vertex<int>, int> dists;
-
-            graph.Dijkstra(verts[0], out dists);
-
-            var items = from pair in dists
-                        orderby pair.Key.Value ascending
-                        select pair;
-
-            foreach(KeyValuePair<Vertex<int>, int> pair in items)
+            while ((SE = Console.ReadLine()) != null)
             {
-                Console.WriteLine(pair.Key.Value + " : " + pair.Value);
+
+                GraphManager(SE);
+
+                GraphTextEntry();
             }
 
         }
@@ -76,7 +78,7 @@ namespace Grafos
                     if(GraphType == 1)
                     {
                         graphS = new GraphS(tam);
-                    } else if(GraphType == 2)
+                    } else if(GraphType =   = 2)
                     {
                         graphS = new DigraphS(tam);
                     }
@@ -125,8 +127,6 @@ namespace Grafos
                 default: WrongEntry(); return false;
             }
             return true;
-
-            Console.Read();
         }
     }
 }
