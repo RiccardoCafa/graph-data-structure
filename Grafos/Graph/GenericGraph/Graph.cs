@@ -65,9 +65,31 @@ namespace Grafos.Graph.GenericGraph
             }
         }
 
-        public void BFS()
+        public List<Vertex<T>> BFS(Vertex<T> root)
         {
+            List<Vertex<T>> opened = new List<Vertex<T>>();
+            Queue<Vertex<T>> myQueue = new Queue<Vertex<T>>();
 
+            myQueue.Enqueue(root);
+
+            while(myQueue.Count > 0)
+            {
+                Vertex<T> vert = myQueue.Dequeue();
+
+                if(opened.Contains(vert))
+                {
+                    continue;
+                }
+
+                opened.Add(vert);
+
+                foreach(Vertex<T> v in vert.adj.Keys)
+                {
+                    if(!opened.Contains(v)) myQueue.Enqueue(v);
+                }
+            }
+
+            return opened;
         }
 
         public void Dijkstra(Vertex<T> root, out Dictionary<Vertex<T>, int> distancia)
