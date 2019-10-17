@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj": {}
+    "C:\\Users\\falcao\\Documents\\GitHub\\Graph-Data-Structure\\Grafos\\Grafos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj": {
+    "C:\\Users\\falcao\\Documents\\GitHub\\Graph-Data-Structure\\Grafos\\Grafos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj",
+        "projectUniqueName": "C:\\Users\\falcao\\Documents\\GitHub\\Graph-Data-Structure\\Grafos\\Grafos.csproj",
         "projectName": "Grafos",
-        "projectPath": "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\Grafos.csproj",
-        "packagesPath": "C:\\Users\\falca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\falca\\Documents\\GitHub\\GrafoStructure\\Grafos\\obj\\",
+        "projectPath": "C:\\Users\\falcao\\Documents\\GitHub\\Graph-Data-Structure\\Grafos\\Grafos.csproj",
+        "packagesPath": "C:\\Users\\falcao\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\falcao\\Documents\\GitHub\\Graph-Data-Structure\\Grafos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\falca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\falcao\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -44,16 +44,23 @@
         "netcoreapp2.1": {
           "dependencies": {
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
