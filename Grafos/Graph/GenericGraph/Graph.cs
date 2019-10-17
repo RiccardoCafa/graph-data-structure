@@ -62,8 +62,8 @@ namespace Grafos.Graph.GenericGraph
         {
             UnvisitGraph();
             cam = 0;
-            visitados = new List<Vertex<T>>();
-            DFSwCam(root);
+            visitadosCam = new Dictionary<Vertex<T>, int>();
+            DFSCam(root);
             visits = visitadosCam;
         }
 

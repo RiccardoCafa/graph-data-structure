@@ -2,60 +2,154 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Grafos.Graph.GenericGraph;
 
 namespace Grafos
 {
     class Program
     {
+        // Riccardo Cafagna e Miguel Falcão
+
         public static Graph<int> graph;
-        static void Main(string[] args)
+        //static void Main(string[] args)
+        //{
+            //MethodsTests d = new MethodsTests(); // to test functions
+            //Promessa();
+        //}
+        public static void Promessa()
         {
-            Vertex<int>[] verts = new Vertex<int>[6]
+            int casos;
+            int arestas, vertices;
+            int count = 0;
+            casos = int.Parse(Console.ReadLine());//Console.ReadLine()
+            Graph<int> graph;
+            for (int i = 0; i < casos; i++)
             {
-                new Vertex<int>(1),
-                new Vertex<int>(2),
-                new Vertex<int>(3),
-                new Vertex<int>(4),
-                new Vertex<int>(5),
-                new Vertex<int>(6),
-            };
+                count = 0;
+                graph = new Graph<int>(true);
+                vertices = int.Parse(Console.ReadLine());
+                arestas = int.Parse(Console.ReadLine());
+                Vertex<int>[] vertxs = new Vertex<int>[vertices];
+                for (int k = 0; k < vertices; k++)
+                {
+                    vertxs[k] = new Vertex<int>(k);
+                    graph.Vertices.Add(vertxs[k]);
+                }
+                for (int j = 0; j < arestas; j++)
+                {
+                    string[] valores = Console.ReadLine().Split(' ');
+                    int val1 = int.Parse(valores[0]);
+                    int val2 = int.Parse(valores[1]);
+                    graph.AddEdge(vertxs[val1 - 1], vertxs[val2 - 1]);
+                }
 
-            graph = new Graph<int>(false);
+                if (arestas == 0)
+                {
+                    Console.WriteLine("Caso #" + (i + 1) + ": ainda falta(m) " + (vertices - 1) + " estrada(s)");
+                    continue;
+                }
 
-            graph.AddArc(verts[0], verts[1], 7);
-            graph.AddArc(verts[0], verts[2], 8);
-            graph.AddArc(verts[1], verts[0], 3);
-            graph.AddArc(verts[1], verts[4], 4);
-            graph.AddArc(verts[1], verts[5], 8);
-            graph.AddArc(verts[2], verts[4], 10);
-            graph.AddArc(verts[3], verts[2], 1);
-            graph.AddArc(verts[4], verts[3], 9);
-            graph.AddArc(verts[5], verts[3], 5);
+                List<Vertex<int>> lista = graph.BFS(graph.Vertices[0]);
 
-            Console.WriteLine("Dijkstra:");
+                bool HasOpen = true;
+                if (lista.Count == vertices)
+                {
+                    Console.WriteLine("Caso #" + (i + 1) + ": a promessa foi cumprida");
+                }
+                else
+                {
+                    while (HasOpen)
+                    {
+                        var verticesAbertos = from v in graph.Vertices
+                                              where v.IsOpen == false
+                                              select v;
+                        if (verticesAbertos.Count() == 0) { HasOpen = false; break; }
 
-            Dictionary<Vertex<int>, int> dists;
+                        count++;
 
-            graph.Dijkstra(verts[0], out dists);
+                        graph.BFS(verticesAbertos.First());
+                    }
+                    Console.WriteLine("Caso #" + (i + 1) + ": ainda falta(m) " + count + " estrada(s)");
+                }
+            }
+        }
+    }
 
-            var items = from pair in dists
-                        orderby pair.Key.Value ascending
-                        select pair;
+    public class Graph<T>
+    {
+        public List<Vertex<T>> Vertices { get; private set; }
+        public bool Undirected { get; private set; }
 
-            foreach(KeyValuePair<Vertex<int>, int> pair in items)
+        public Graph(bool undirected)
+        {
+            Vertices = new List<Vertex<T>>();
+            this.Undirected = undirected;
+        }
+
+        public void AddEdge(Vertex<T> vertex01, Vertex<T> vertex02, int weight = 1)
+        {
+            if (!Undirected) throw new Exception("Grafo dirigido");
+
+            if (!Vertices.Contains(vertex01)) Vertices.Add(vertex01);
+            if (!Vertices.Contains(vertex02)) Vertices.Add(vertex02);
+
+            if (!vertex01.adj.ContainsKey(vertex02))
             {
-                Console.WriteLine(pair.Key.Value + " : " + pair.Value);
+                vertex01.AddEdge(vertex02, weight);
             }
 
-            Console.WriteLine("BFS: ");
-
-            List<Vertex<int>> list = graph.BFS(verts[0]);
-
-            list.Sort();
-            foreach(Vertex<int> )
-
-            Console.Read();
+            if (!vertex02.adj.ContainsKey(vertex01))
+            {
+                vertex02.AddEdge(vertex01, weight);
+            }
         }
+
+        public List<Vertex<T>> BFS(Vertex<T> root)
+        {
+            List<Vertex<T>> opened = new List<Vertex<T>>();
+            Queue<Vertex<T>> myQueue = new Queue<Vertex<T>>();
+
+            myQueue.Enqueue(root);
+
+            while (myQueue.Count > 0)
+            {
+                Vertex<T> vert = myQueue.Dequeue();
+
+                vert.IsOpen = true;
+
+                if (opened.Contains(vert))
+                {
+                    continue;
+                }
+
+                opened.Add(vert);
+
+                foreach (Vertex<T> v in vert.adj.Keys)
+                {
+                    if (!opened.Contains(v)) myQueue.Enqueue(v);
+                }
+            }
+
+            return opened;
+        }
+
+    }
+
+    public class Vertex<T>
+    {
+        public Dictionary<Vertex<T>, int> adj { get; set; }
+        public T Value { get; set; }
+        public bool IsOpen { get; set; }
+
+        public Vertex(T value)
+        {
+            adj = new Dictionary<Vertex<T>, int>();
+            this.Value = value;
+        }
+
+        public void AddEdge(Vertex<T> vertex, int weight = 1)
+        {
+            adj.Add(vertex, weight);
+        }
+
     }
 }

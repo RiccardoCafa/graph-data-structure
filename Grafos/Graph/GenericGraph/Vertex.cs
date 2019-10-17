@@ -8,7 +8,7 @@ namespace Grafos.Graph.GenericGraph
 {
     public class Vertex<T>
     {
-        public Dictionary<Vertex<T>, int> adj { get; }
+        public Dictionary<Vertex<T>, int> adj { get; set; }
         public T Value { get; set; }
         public bool IsOpen { get; set; }
         public int AdjCount {
@@ -22,9 +22,9 @@ namespace Grafos.Graph.GenericGraph
             }
         }
 
-        public Vertex(T value, Dictionary<Vertex<T>, int> adjac = null)
+        public Vertex(T value)
         {
-            adj = adjac ?? new Dictionary<Vertex<T>, int>();
+            adj = new Dictionary<Vertex<T>, int>();
             this.Value = value;
         }
 

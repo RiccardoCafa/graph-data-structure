@@ -7,8 +7,8 @@ namespace Grafos.Graph
     [System.Serializable]
     public abstract class StaticGraph
     {
-        public int Edges { get; }
-        public int Vertices { get; }
+        public int Edges { get; set; }
+        public int Vertices { get; set; }
 
         protected int[,] Adj;
 
