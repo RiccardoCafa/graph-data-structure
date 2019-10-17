@@ -78,7 +78,7 @@ namespace Grafos
                     if(GraphType == 1)
                     {
                         graphS = new GraphS(tam);
-                    } else if(GraphType =   = 2)
+                    } else if(GraphType == 2)
                     {
                         graphS = new DigraphS(tam);
                     }
